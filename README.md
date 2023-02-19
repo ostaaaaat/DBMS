@@ -184,14 +184,21 @@ o	name (varchar(100))
 Таблицы:
 
 •	records
+
 o	id (int)
+
 o	user_id (foreign key) (int)
+
 o	message (varchar(300))
+
 o	evalution  (float)
+
 o	topic_id (foreign key) (int)
 
 •	topics
+
 o	id (int)
+
 o	name (varchar(50))
 
 6. Основные операции с каждой БД.
