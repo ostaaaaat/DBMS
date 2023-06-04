@@ -3,7 +3,7 @@ select password from users
 Go
 
 insert Users (email, password, name, delivery_id, animal_id, phone) 
-	values ('derby@mail.ru', 'fji43k', 'Витя', 16, 5, '89374567810')
+	values ('derby@mail.ru', 'fji43k', 'Г‚ГЁГІГї', 16, 5, '89374567810')
 Go
 
 select count(*) count_deliveries 
