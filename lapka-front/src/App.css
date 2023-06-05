@@ -1,0 +1,105 @@
+.logo {
+  display: inline-flex;
+  text-align: center;
+  color: #dfc2f2;
+  font-size: 40px;
+  font-family: URW Chancery L, cursive;
+  font-weight: 100;
+  text-decoration: none;
+  width: 800px;
+  margin: 0px 80px auto;
+}
+
+.header-nav {
+  display: inline-flex;
+  text-align: center;
+  height: 10px;
+  color: #c083e8;
+  font-size: 30px;
+  font-family: URW Chancery L, cursive;
+  font-weight: 100;
+  text-decoration: none;
+  width: 800px;
+  margin: 10px 80px auto;
+  
+}
+
+.conteiner {
+  background-color:  rgb(219, 223, 226);
+  border-radius: 20px;
+  margin: auto 2px;
+  display: inline-block;
+  width: 150px;
+  padding: 10px 10px;
+  text-align: center;
+  
+}
+
+.info {
+  width: 800px;
+  height: 600px;
+  margin: 100px 50px 100px auto;
+  
+}
+
+.name {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.photo {
+
+  float:left;
+  margin: 7px 7px 7px 0;
+}
+
+.catalog {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+ }
+
+.catalog-header {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  color: #d3aded;
+  font-family: URW Chancery L, cursive;
+}
+
+.photo_catalog {
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.card {
+  height: 400px;
+}
+
+.filter {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+ }
+
+.button {
+  background-color: #dfc2f2;
+  color: #44344e;
+  border: #dfc2f2;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-family: Andale Mono, monospace;
+  font-weight: 600;
+  width: 230px;
+}
+
+.button:hover {
+  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+
+}

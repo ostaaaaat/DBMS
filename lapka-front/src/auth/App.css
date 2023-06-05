@@ -1,0 +1,45 @@
+.MainContainer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  text-align: center;
+}
+
+.HorizontalContainer{
+  flex-direction: row;
+  display: flex;
+}
+
+.Button {
+  background-color: #dfc2f2;
+  color: #44344e;
+  border: #dfc2f2;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-family: Andale Mono, monospace;
+  font-weight: 600;
+  width: 100px;
+}
+
+.Button:active{
+  transform: scale(0.98);
+}
+
+.Button:hover{
+  background-color: #7d5a92;
+}
+
+.MainInput{
+  width: 195px;
+}
+
+.VerticalIndent{
+  height: 16px;
+}
+
+.HorizontalIndent{
+  width: 24px;
+}

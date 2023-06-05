@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  py:
+    build: ./py
+    ports:
+      - 8082:8082
+   
+
+  mssql:
+    image: justin2004/mssql_server_tiny
+    environment:
+      MSSQL_SA_PASSWORD: Pass@word
+      ACCEPT_EULA: Y
+    ports:
+      - 1433:1433
+    volumes:
+      - type: bind
+        source: .
+        target: /data

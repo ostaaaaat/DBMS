@@ -1,0 +1,149 @@
+create database Users;
+GO
+
+USE Users;
+Go
+
+
+Create table Cities(
+                       id int identity(1,1) not null primary key,
+                       name varchar(100)
+);
+Go
+
+alter table Cities
+    alter column name varchar(100) not null
+Go
+
+
+create table Districts(
+                          id int identity(1,1) not null primary key,
+                          name varchar(100) not null,
+                          price_delivery float not null,
+);
+Go
+
+alter table Districts
+    add city_id int not null
+Go
+
+alter table Districts
+    with check add foreign key(city_id)
+        references Cities(id)
+        on update cascade
+        on delete cascade
+Go
+
+create table Type_deliveries(
+                                id int identity(1,1) not null primary key,
+                                name varchar(100) not null
+);
+Go
+
+create table Orders(
+                       id int identity(1,1) not null primary key,
+                       product_id int not null
+);
+Go
+
+create table Deliveries(
+                           id int identity(1,1) not null primary key,
+                           district_id int not null,
+                           address varchar(100) not null,
+                           date datetime not null,
+                           type_delivery_id int not null,
+                           order_id int not null
+);
+Go
+
+alter table Deliveries
+    with check add foreign key(district_id)
+        references Districts(id)
+        on update cascade
+        on delete cascade
+Go
+
+alter table Deliveries
+    with check add foreign key(type_delivery_id)
+        references Type_deliveries(id)
+
+alter table Deliveries
+    add constraint df_deliveries_date default (getdate()) for date
+Go
+
+
+create table Users(
+                      id int identity(1,1) not null primary key,
+                      email varchar(100) not null,
+                      password varchar(10) not null,
+                      name varchar(100) not null,
+                      delivery_id int not null,
+                      animal_id int not null,
+                      phone varchar(15) not null
+);
+Go
+
+alter table Users
+    add constraint u_users_email unique (email)
+Go
+
+alter table Deliveries
+    with check add foreign key(order_id)
+        references Orders(id)
+        on update cascade
+        on delete cascade
+Go
+
+create table Animals(
+                        id int identity(1,1) not null primary key,
+                        name varchar(100) not null
+);
+Go
+
+
+alter table Users
+    drop column delivery_id
+Go
+
+
+alter table Deliveries
+    add user_id int null
+Go
+
+alter table Deliveries
+    alter column user_id int not null
+Go
+
+alter table Deliveries
+    with check add foreign key(user_id)
+        references Users(id)
+        on update cascade
+        on delete cascade
+Go
+
+
+
+alter table Users
+    drop column animal_id
+Go
+
+create table users_to_animals(
+                                 user_id int not null,
+                                 animal_id int not null,
+                                 primary key(user_id, animal_id)
+);
+Go
+
+alter table users_to_animals
+    with check add foreign key(user_id)
+        references Users(id)
+        on update cascade
+        on delete cascade
+Go
+
+alter table users_to_animals
+    with check add foreign key(animal_id)
+        references Animals(id)
+        on update cascade
+        on delete cascade
+Go
